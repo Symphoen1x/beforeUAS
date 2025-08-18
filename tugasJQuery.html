@@ -1,0 +1,89 @@
+<!-- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Gratisan | Join grup Cuy untuk menjadi member</title>
+    <link rel="stylesheet" href="tugasJQ.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-
+/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+crossorigin="anonymous"></script> 
+</head>
+<body>
+    <header>
+        <h1>Movie Gratisan</h1>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li class="button active" data-filter="semua">Semua</li>
+                <li class="button" data-filter="trend">Trending</li>
+                <li class="button" data-filter="Pop">Populer Sepanjang Masa</li>
+                <li class="button" data-filter="Rate">Rating Tertinggi</li>
+                <li class="button" data-filter="action">Action</li>
+                <li class="button" data-filter="anime">Anime</li>
+                <li class="button" data-filter="comedy">Comedy</li>
+                <li class="button" data-filter="horror">Horror</li>
+                <li class="button" data-filter="romance">Romance</li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="box filter action" id="w">
+                <p class="s">Test123</p>
+            </div>
+            <div class="box filter anime">Anime</div>
+            <div class="box filter comedy">Comedy</div>
+            <div class="box filter horror">Horror</div>
+            <div class="box filter romance">Romance</div>
+            <div class="box filter action">Action</div>
+            <div class="box filter anime">Anime</div>
+            <div class="box filter comedy">Comedy</div>
+            <div class="box filter horror">Horror</div>
+            <div class="box filter romance">Romance</div>
+            <div class="box filter action">Action</div>
+            <div class="box filter anime">Anime</div>
+            <div class="box filter comedy">Comedy</div>
+            <div class="box filter horror">Horror</div>
+            <div class="box filter romance">Romance</div>
+            <div class="box filter action">Action</div>
+            <div class="box filter anime">Anime</div>
+            <div class="box filter comedy">Comedy</div>
+            <div class="box filter horror">Horror</div>
+            <div class="box filter romance">Romance</div>
+        </section>
+    </main>
+    <script>
+        $(document).ready(function () {
+            $(".button").click(function () {
+                let nilai = $(this).attr("data-filter");
+                if (nilai == "semua") {
+                    $(".filter").show(1000);
+                } 
+                else if (nilai == "trend") {
+                    $(".filter").hide(1000);
+                    $(".filter").slice(0, 5).show(1000);
+                }
+                else if (nilai == "Pop") {
+                    $(".filter").hide(1000);
+                    $(".filter").slice(7, 12).show(1000);
+                }
+                else if (nilai == "Rate") {
+                    $(".filter").hide(1000);
+                    $(".filter").slice(-5).show(1000);
+                }
+                else {
+                    $(".filter").not("." + nilai).hide(1000);
+                    $(".filter").filter("." + nilai).show(1000);
+                }
+            });
+            
+            $("ul .button").click(function () {
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

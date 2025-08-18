@@ -1,0 +1,117 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #262626;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+main {
+    background-color: #555;
+    min-height: 100vh;
+}
+
+nav {
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    position: relative;
+    width: 100%;
+    margin: 10px 10px 30px;
+}
+
+ul li {
+    cursor: pointer;
+    list-style: none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-left: 15px;
+    font-family: Arial;
+    text-transform: uppercase;
+}
+
+ul li:hover,
+.active {
+    background: #fff;
+    color: #262626;
+}
+section {
+    position: relative;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+section #w{
+    background-image: url('Action/b2YL2kncIqlcDcqly78AsOPJi6r.jpg');
+    background-size: cover;
+    /* background-position: center; */
+    position: relative;
+}
+
+section #w::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+section #w p {
+    position: absolute;
+    z-index: 1;
+    bottom: 100;
+}
+
+
+
+section .box {
+    width: 23%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    float: left;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+/* Pada class action, horror, anime, romance dan comedy silakan ditambahkan background sesuai selera warna. */
+
+.action {
+    background: darkgoldenrod;
+}
+
+.anime {
+    background: turquoise;
+}
+
+.romance {
+    background: deeppink;
+}
+
+.comedy {
+    background: seagreen;
+}
+
+.horror {
+    background: orangered;
+}

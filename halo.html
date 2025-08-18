@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Storage</title>
+	<style>
+	#popupForm {
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: white;
+		padding: 20px;
+		border: 1px solid #ccc;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}
+	</style>
+</head>
+<body>
+	<center>
+		<h1>Selamat Datang, null!</h1>
+		<button onclick="tampilkanForm()">Masukkan Nama</button>
+		<button onclick="hapusNama()">Hapus Nama</button> 
+	</center>
+	
+	<div id="popupForm" >
+		<h3>Masukkan Nama Anda</h3>
+		<input type="text" id="namaInput" placeholder="Nama Anda">
+		<button onclick="simpanNama()">Simpan</button>
+		<button onclick="tutupForm()">Batal</button>
+	</div>
+
+	<script type="text/javascript">
+		const namaMember = document.querySelector('h1');
+		const popupForm = document.getElementById('popupForm');
+
+		function tampilkanForm() {
+			popupForm.style.display = 'block';
+		}
+
+		function tutupForm() {
+			popupForm.style.display = 'none';
+		}
+
+		function simpanNama() {
+			const nama = document.getElementById('namaInput').value;
+			if (nama.trim() !== '') {
+				sessionStorage.setItem('nama', nama);
+				namaMember.innerHTML = 'Halo ' + nama;
+				tutupForm();
+				document.getElementById('namaInput').value = '';
+			}
+		}
+
+		function hapusNama() {
+			sessionStorage.clear();
+			namaMember.innerHTML = 'Selamat Datang, Member!';
+		}
+	</script>
+</body>
+</html>
+

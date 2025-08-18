@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="cek()">
+    <div id="judul">
+        <h1>Counter</h1>
+    </div>
+    <div id="counter">
+        <h2>Hitungan ke-<span id="count">0</span></h2>
+    </div>
+    <button id="tambah" onclick="tambah()">Tambah</button>
+    <button id="hapus" onclick="hapus()">Hapus</button>
+
+    <script>
+        function cek() {
+            let count = localStorage.getItem('count');
+            if (count !== null) {
+                document.getElementById('count').innerText = count;
+            }
+        }
+
+        function tambah() {
+            let count = localStorage.getItem('count');
+            if (count === null) {
+                localStorage.setItem('count', '1') //versi bacakend/data
+                document.getElementById('count').innerText = "1";  //versi FE/tampilan/visual
+            } else {
+                count = parseInt(count) + 1;
+                localStorage.setItem('count', count)
+                document.getElementById('count').innerText = count;
+            }
+        }
+
+        function hapus() {
+            localStorage.clear();
+            document.getElementById('count').innerText = "0";
+        }
+    </script>
+</body>
+
+</html>

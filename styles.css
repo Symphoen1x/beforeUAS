@@ -1,0 +1,11 @@
+/* Menimpa gaya Bootstrap */
+.custom-font {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Menambahkan gaya baru */
+  .custom-section {
+    padding: 50px 0;
+    background-color: #f5f5f5;
+  }

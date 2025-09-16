@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All about Selector CSS</title>
+    <style>
+        /* Att Selector */
+        a[href*='insensitive' i] {
+        color: cyan;
+        }
+        /* Universal Selector */
+        *.warning {
+        color: red;
+        }
+        /* General Sibling Selector (~) */
+        img ~ p {
+            color: green;
+        }
+        /* pseudo class selector */
+        /* rule akan diterapkan pada sebuah tautan yang belum pernah dikunjungi */
+        a:link {
+           color: red;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan yang sudah pernah dikunjungi */
+        a:visited {
+           color: green;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan ketika diarahkan dengan kursor */
+        a:hover {
+           color: pink;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan ketika ditekan */
+        a:active {
+           color:orange;
+        }
+        /* pseudo elemen selector */
+        #test::before{
+            content: "cek lebih lengkap pseudo elemen selector, disini:"
+        }
+        #test::after{
+            content: "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements";
+        }
+    </style>
+</head>
+<body>
+    <q>Sumber: dicoding kelas dasar pengembangan web -> css advance</q>
+    <h1>Jenis-jenis Selector: khusus attribute selector dan universal</h1>
+    <p>Ada beberapa jenis selector seperti Type Selector, class selector, id selector, universal selector, dan attribute selector</p>
+    <h2>Attribute selector</h2>
+    <p>Syntaxnya ada banyak banget disertai masing-masing tujuanya. Cek selengkapnya di https://www.dicoding.com/academies/123/tutorials/4207#:~:text=dalam%20sebuah%20tabel.-,Syntax,-Description</p>
+    <ul>
+        <li><a href="#internal">Internal link</a></li>
+        <p>Contoh penerapan link dibawah dari element (a) yang menerapkan nilai pada href yang mengandung teks "insensitive" tidak mementingkan huruf kapital yang ditandai oleh huruf i diakhir</p>
+        <li><a href="#InSensitive">Insensitive link</a></li>
+        <li><a href="http://example.org">Example org link</a></li>
+    </ul>
+    <h2>Universal Selector</h2>
+    <p>Working buat semua elemen, tapi bisa elemen tertentu yang dispesifikan untuk dibuat general</p>
+    <p class="warning">
+        Perhatikan paragraf ini! Paragraf ini merupakan paragraf yang memiliki
+        kelas bernilai warning, sehingga teks dari paragraf ini akan berwarna
+        merah
+    </p>
+    <h1>Jenis-jenis Combinator dalam selector</h1>
+    <p>
+        Ada bebebrapa diantaranya: Adjacent Sibling Selector (+), General Sibling Selector (~), Child Selector(>), dan Descendant Selector(space). <br>
+        + = satu elemen dibawah target, ~ = lebih dari satu elemen dibawah target kecuali ada di dalam elemen pembungkus, > = turunan elemen target kecuali ada di dalam elemen pembungkus, space = turunan elemen dalam target secara keseluruhan. 
+    </p>
+    <h2>
+        Yang kali ini dicoba adalah General Sibilng Selector guna mengetahui kemampuan dia bisa lebih dari range dua elemen di bawah target atau tidak. 
+    </h2>
+    <img src="/learningByDoingFullStack/image.png" alt="Test ini target">
+    <p>Ini range pertama</p>
+    <p>ini range kedua</p>
+    <div>
+        <p>Ini ngetest = ga bisa works kalau dalam container div</p>
+    </div>
+    <p>ini range Keriga = works! jadi lebih dari satu!</p>
+
+    <h1>Pseudo Selector</h1>
+    <p>Ada dua jenis pseudo selector, yakni pseudo class selector dan pseudo elemen selector. <br>
+        Intinya pseudo selector, baik class maupun elemen menargetkan class/elemen tertentu yang bisa di terapkan pseudo/rekayasa seperti elemen (a). <br>
+        Bedanya di penggunaan tanda petik dua, kalau pseudo class pakai satu tanda petik dua(:), sementara pseudo elemen dua tanda petik dua(::), juga pada jenis pseudonya yang bisa di cek di link: 
+    </p>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">
+        cek lebih lengkap disini tentang pseudo clases</a>.
+    <p id="test"> </p>
+</body>
+</html>

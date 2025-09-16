@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Curiosity</title>
+    <style>
+        mark {
+  background: linear-gradient(90deg, #ffeb3b 40%, #fff176 60%);
+  color: black;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <p><strong>List materi:</strong></p>
+            <li><a href="#ElementQuote">Element Quote</a></li>
+            <li><a href="#AttDownloadHreflang">Att Download & Hreflang</a></li>
+            <li><a href="#Rel">Rel</a></li>            
+            <li><a href="#ElementCite">Element Cite</a></li>
+            <li><a href="#ElementDefiningTerms">Element Defining Terms</a></li>
+            <li><a href="#Highlight">Highlight</a></li>
+        </nav>
+
+    </header>
+
+    <h2 id="ElementQuote">Perbedaan tanda tanda petik dua dengan quote</h2>
+        <p>perhatikan bedanya quote: <q>Bentuknya noh liat</q>.</p>
+        <p>Bedain ama ini "Woyyy!", dia tuh tanda kutip</p>
+
+    <h2 id="AttDownloadHreflang">Implementasi dari att download & hreflang</h2>
+    <ul>
+        <li>
+            <a href="/learningByDoingFullStack/elemenDasar.html" download="elemenDasar.html" hreflang="en">Download File English</a>
+        </li>
+        <li>
+            <a href="learningByDoingFullStack/index.html" download="index.html" hreflang="id">Download File Bahasa</a>
+        </li>
+    </ul>
+
+    <h2 id="Rel">Implementasi dari rel -> </h2>
+    <!-- rel bertujuan untuk menunjukkan hubungan antara halaman saat ini dan URL tujuan. 
+     Nilai-nilainya dipakai oleh browser, crawler, dan alat lain untuk keamanan, SEO, serta semantik navigasi. -->
+        
+     <ul>
+        <li>
+            <a href="/page/1" rel="prev">Sebelumnya</a>
+        </li>
+        <li>
+            <a href="/page/3" rel="next">Berikutnya</a>
+        </li>
+        <li>
+            <a href="https://akun-saya.example" rel="me">Profil Saya</a>
+        </li>
+        <li>
+            <a href="https://eksternal.com" rel="external">Ke Situs Eksternal</a>
+        </li>
+        <li>
+            <a href="/artikel.pdf"  rel="alternate" type="application/pdf">Versi PDF</a>
+            <a href="/artikel.docx" rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document">Versi Word</a>
+        </li>
+    </ul>
+
+    <h2 id="ElementCite">Ceritanya mau nyoba element cite & att cite</h2>
+    <!-- ,tapi ga paham tujuan att cite yang to the pointnya, cuma disebutin buat semantic suatu kutipan yang ada sumbernya, tapi ga kasat mata di pengguna, the hell lah-->
+    <p>Versi cite as att: dilansir dari website Mozilla, <q cite="https://www.mozilla.org/en-US/about/history/details/">Firefox 1.0 diluncurkan
+        pada 2004 dan menjadi produk yang sukses.</q>
+    </p>
+    <p>Versi cite as element:
+        dilansir dari <cite><a href="https://www.mozilla.org/en-US/about/history/details/">website Mozilla</a></cite>,
+        Firefox 1.0 diluncurkan pada 2004 dan menjadi produk yang sukses.
+    </p>
+
+    <h2 id="ElementDefiningTerms">Implementasi dari element defining terms</h2>
+        <p>
+            <dfn>Digibin</dfn> merupakan project yang saya kembangkan bersama tim saya dalam rangka mengikuti program <em>Hibah MBKM UNS 2025</em>
+        </p>
+
+    <h2 id="Highlight">Niatnya pengen buat highlight yang brush texture</h2>
+    <!-- tapi masih belum bisa karena kurang tau texture yang dipakai kek mana maksudnya, mungkin eksternal -->
+    <p>Lorem ipsum dolor<mark>sit amet consectetur adipisicing elit.</mark>Distinctio velit perferendis facere sint illo totam nostrum exercitationem ad aperiam eos!</p>
+
+    <h2>Dua display value yang ada pada html, yakni block dan inline</h2>
+    <p>Block value ini bekerja dengan meneysuaikan lebar area kiri dan kanan halaman web sehingga memungkinkan untuk terbentuk line baru dibawah <br>
+        Inline value sebaliknya, dia tidak dapat menghasilkan line baru karena hanya fokus pada lebar yang diperlukan saja
+    </p>
+
+    <h2>class vs id, dan kegunaan id</h2>
+    <p>Sesimple class = boleh dipakai untuk banyak elemen dalam satu code sedangkan id = hanya dipakai elemen unique</p>
+    <p>Id bisa digunakan salah satunya untuk HTML bookmarks yang terintegrasi dengan link.<br>
+        Intinya bookmarks tuh buat jump to specific part of a webpage. Ini bisa dikombinasikan dengan javascript function juga kayak getElementById
+    </p>
+    <h2>Ada yang namanya elemen Iframe untuk import konten eksternal(web/yt/dll)</h2>
+    <p>Salah satu yang menarik dari iframe adalah dia bisa disetting layout tampilannya dengan html 5 <br> 
+        Contohnya gini:
+    </p>
+    <iframe src="demo_iframe.htm" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+    <p>Awalnya bakalan tidak kelihatan apa-apa, tapi ketika di klik link bawah maka muncul targetnya</p>
+    <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+    <p>Kuncinya dibagian attribute name dan target yang valuenya harus sama!</p>
+
+</body>
+</html>

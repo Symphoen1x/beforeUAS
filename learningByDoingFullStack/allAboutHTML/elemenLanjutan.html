@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+    Meta ini manrik banget pembahasanya karena berhubungan dengan metadata code html & page nya!
+    Ada beberapa fungsi:
+
+    selengkapnya cek: https://www.w3schools.com/html/html_head.asp#:~:text=other%20web%20services.-,Examples,-Define%20the%20character
+    -->
+    <meta name="description" content="Learning by doing html"> <!--Deskripsi web page-->
+    <meta name="keywords" content="HTML, CSS"> <!-- Untuk memudahkan SEO karena menyediakan search engine-->
+    <meta name="author" content="Almad D. Anz"> <!--Author pemilik web-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel, Input, Character</title>
+</head>
+<body>
+    <h1>A. Khusus Tabel Applied</h1>
+    <p>Cek ae lagnsung di w3 school buat dokumentasinya. Dijamin komplit: https://www.w3schools.com/</p>
+    <h1>B. khusus Input</h1>
+    <h2>1. Tipe pada Elemen Input</h2>
+    <h3>Tipe Range</h3>
+    <div>
+        nilai : <input type="range" min="0" max="100" value="50">
+    </div>
+    <h3>Tipe Hidden: Ini menarik khusus untuk devloper guna menyisipkan data tersembunyi</h3>
+    <p> Ada beebrapa keuntungan dalam menggunakan ini: <br>
+     1. Menjaga integritas data yang tidak boleh dimodifikasi user <br>
+     2. Menyimpan informasi kontekstual seperti ID pengguna, status login, atau parameter tersembunyi <br>
+     3. Mendukung logika server-side tanpa mengganggu pengalaman pengguna <br>
+     Selengkapnya bisa cek di : https://copilot.microsoft.com/shares/57r55sNAtreqNV2nAATUa
+    </p> 
+    <div>
+        <input type="hidden" name="user_id" value="12345">
+    </div>
+
+    <h2>
+        2. Label Element
+    </h2>
+    <p>
+        elemen yang digunakan untuk memberikan caption pada elemen input 
+    </p>
+    <p>Keuntungan adanya elemen ini adalah: <br>
+        1. Memudahkan screen reader untuk menjelaskan fungsi elemen input dan interaksinya <br>
+        2. memudahkan browser untuk mengalihkan langsung(navigasi) elemen input saat elemen label di klik oleh user
+    </p>
+    <br>
+    <p>Bukti dari kedua fungsi yang disebutkan diatas bisa dicek langsung pada form berikut:</p>
+    <div>
+        <label for="username">Username</label>
+        <p><em>Coba diklik label di atas, pasti langsung aktif tu form</em></p>
+        <input type="text" id="username">
+    </div>
+    <div>
+        <label>Cek</label>
+        <p><em>Coba diklik label di atas, ga bakal aktif tu form</em></p>
+        <input type="text">
+    </div>
+
+    <h2>3. Attribute pada elemen input</h2>
+    <div>
+        <label for="password">Password</label>
+        <br />
+        <input type="password" id="password" placeholder="Wajib Diisi" required/>
+    </div>
+    <h3>Att autocomplete = menarik</h3>
+    <p>Ini harus pakai att name dan browser chrome karena beda-beda setiap browser, sementara chrome = works</p>
+    <form autocomplete="on">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="on">
+        <button type="submit">Submit</button>
+      </form>
+      
+    <h3>Attribute dalam pengiriman data(request-respond)</h3>
+    <p>Ada dua jenis att dalam proses tersebut, yakni Att Action dan Method</p> <br>
+    <h3>Attribute Action</h3>
+    <p>Action berfokus pada menentukan alamat tujuan pengiriman data. Terdapat URL/API yang dituju ke server yang domain sama atau beda</p> 
+    <p>Tanpa att ini, data yang disubmit dan dikirim akan mengarah ke URL halaman tempat form berada</p>
+    <p>Ada dua jenis value/url yang ada pada att ini, Abolute URl dan Relatif URL</p> 
+    <p>Absolute URL bertujuan untuk Mengarah ke alamat lengkap, termasuk protokol dan domain, misalnya "https://example.com/api/submit"</p> 
+    <p>Intinya gunakan jenis ini untuk tujuan/server yang eksternal seperti API eksternal, layanan cloud, atau domain lain</p> 
+    <p>Sementara Relative URL bertujuan untuk Mengarah ke path dalam domain yang sama, misalnya "/proses" atau "submit.php"</p>
+    <p>Jenis ini digunakan untuk server lokal atau halaman yang sama saat sedang testing misal</p>
+    <h3>Action att url absolute</h3>
+    <form action="https://www.instagram.com/"></form>
+    <h3>Action att url Relative</h3>
+    <form action="/learningByDoingFullStack/elemenDasar.html"></form>
+    
+    <h3>Attribute Method</h3>
+    <p>Attribute method berfokus pada menentukan cara data dikirim ke alamat tujuan/server. </p>
+    <p>Ada dua jenis metode yang dapat digunakan pada form html, yakni GET dan POST</p>
+    <p>Sebelum memahami jenis keduanya, pahami dulu kerja HTTP. <br>
+        HTTP merupakan protokol atau cara data dari request client dikirim oleh browser ke server dan cara resource hasil sebagai hasil jawaban yang diberikan oleh server melalui browser ke client <br>
+        Dalam HTTP, terdapat dua bagian, yakni header yang berupa sebuah set berisi metadata(content-type, authorization, cookie, accept, content-lenght, dll) yang mana dibagi menjadi header request & header response. <br>
+        Untuk lebih jelas bisa cek di: 
+        https://copilot.microsoft.com/shares/oSmWFenGPyYBZ8KyFDQe9 <br>
+        Selain itu, terdapat pula body yang merupakan konten/isi utama data yang dibagi menjadi body request dan body response dalam proses pengiriman data.
+        Body Request adalah bagian dari HTTP request yang berisi data yang dikirim oleh client (biasanya browser) ke server. <br>
+        Body Response adalah bagian dari HTTP response yang berisi data yang dikirim oleh server kembali ke client. <br>
+        Keduanya berbentuk raw text seperti HTML, JSON, XML, Form-encoded data(application/x-www-form-urlencoded atau multipart/form-data) <br>
+        Namun, body juga ada yang Empty Body atau tidak ada sama sekali isi yang biasanya ada di Mehtod GET karena browser tidak mengisi bagian body dari HTTP Request Client yang digant melalui query string dan ditambahkan ke URL.
+        Contoh lebih lanjutnya sudah dibuktikan di sini: https://mdn.github.io/learning-area/html/forms/sending-form-data/get-method.html <br>
+        Tapi, empty body juga ada pada proses response server karena server mengirim empty body pada saat tidak ada konten yang perlu dikembalikan seperti:
+        response dengan status 204(No Content) atau response redirect 301, 302(biasanya hanya untuk memberi tahu browser pindah halaman). <br>
+        Informsi lebih lanjut bisa dicek di: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data
+    </p>
+    <p>Method GET digunakan untuk mendapatkan data dari server melalui browser yang terlebih dahulu dalam bentuk body request(empty body=diganti dalam bentuk query string dan ditambahkan di URL parameters).<br>
+        URL parametersnya  : pasangan key-value -> key=attribute name dan value=input user, tapi ada pelengkap(non-param) tanda tanya(?) sebagai pemisah path URL dan query string, ampersand(&) untuk memisahkan pasangan key-value.
+        contoh implementasinya bisa cek di: https://mdn.github.io/learning-area/html/forms/sending-form-data/get-method.html
+        Catatan: tidak semua data bisa ditambahkan ke URL menjadi string query karena bergantung pada protokol yang digunakan, jika http/https mendukung query string, tapi jika file:, data:, dll tidak bisa mendukung query string
+        sehingga tidak cocok untuk method GET.
+    </p>
+    <h3>Method GET Implementation</h3>
+    <form action="http://www.foo.com" method="GET">
+        <div>
+          <label for="say">What greeting do you want to say?</label>
+          <input name="say" id="say" value="Hi" />
+        </div>
+        <div>
+          <label for="to">Who do you want to say it to?</label>
+          <input name="to" id="to" value="Mom" />
+        </div>
+        <div>
+          <button>Send my greetings</button>
+        </div>
+    </form>
+
+    <p>Method Post digunakan untuk mengirim data dari browser ke server juga yang nanti akan menghasilkan resource dari response server. <br>
+        Bedanya dengan method GET, dia punya body request yang non empty sehingga data tidak ditambahkan ke URL parameters. <br>
+        Adanya body request bisa ditunjukan melalui URL yang tetap bersih serta sebagai POST method, dan pada
+        header field(khususnya content-type & content-length) dalam header HTTP request yang bisa langsung di cek di sini: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data#:~:text=sebagai%20gantinya%3APOST-,HTTP,-Copy <br>
+    </p>
+    <h3>Method Post Implementation</h3>
+    <form action="http://www.foo.com" method="POST">
+        <div>
+          <label for="say">What greeting do you want to say?</label>
+          <input name="say" id="say" value="Hi" />
+        </div>
+        <div>
+          <label for="to">Who do you want to say it to?</label>
+          <input name="to" id="to" value="Mom" />
+        </div>
+        <div>
+          <button>Send my greetings</button>
+        </div>
+    </form>
+    <h1>C. Khusus Character</h1>
+    <p>Se simple ada simbol karakter special/khusus yang biasa digunakan dalam web seperti copyright symbol(©) yang bukan merupakan standar kelompok ASCII characters. <br>
+        ASCII characters hanya menyediakan karakter seperti huruf, nomor, dan beberapa simbol dasar lainnya. <br>
+        Karakter lain juga ada yang ga bisa masuk HTMl walaupun ASCII sepreti (<) dan (>) karena dianggap sebagai tag  <br>
+        Solusinya dengan <q>escaped</q> character atau diganti dengan nilai numeric atau character reference pada karakternya. <br>
+        Caranya ada dua, tetapkan nilai numeric(numeric entity) character/symbol tersebut atau dengan nama singkatan(named entity) yang telah ditetapkan oleh html 5.
+         Penggunaan keduanya harus diawali dengan & dan diakhiri dengan ;
+    </p>
+    <p>Contohnya: symbol copyright dengan numeric entity = &#169; dan named entity = &copy; </p>
+    
+</body>
+</html>

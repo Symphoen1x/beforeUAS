@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic Element</title>
+    <style>
+        .test {
+  color: #2E8B57;
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <!--  -->
+    <h1>Ada Dua Jenis Generic Elemen dalam HTML</h1>
+    <h2>Div</h2>
+    <div>
+        <h3>Ini area Judul dalam div</h3>
+        <p>Ini adalah area text/paragraph</p>
+        <p>Sederhananya, div ini adalah elemen generik yang ga punya pengaruh langsung yang muncul dari elemen itu sendiri sebelum disandingkan dengan CSS atau bisa dibilang hanyalah sebuah container </p>
+        <img src="/learningByDoingFullStack/image.png" alt="Saksake">
+    </div>
+    <h2>Span</h2>
+    <h3>Span dalam <span class="test">Heading</span> </h3>
+    <h3>Span dalam list</h3>
+    <ul>
+        <li>Agil: <span class="phone">08123xxx</span></li>
+        <li>Widy: <span class="phone">08222xxx</span></li>
+        <li>Gilang:<h1>08333xxx</h1></li> <!-- Gagal kan kalau pakai selain span -->
+        <li>Gilang:<p>08333xxx</p></li> <!-- Gagal kan kalau pakai selain span -->
+    </ul>
+    <h3>Span dalam paragraph</h3>
+    <p> Untuk membuat sebuah bakso kita membutuhkan <span class="bahan">daging sapi</span>,
+        <span class="bahan">tepung tapioka</span>, <span class="bahan">bawang merah</span> dan
+        <span class="bahan">bawang putih</span> kemudian satu sendok makan
+        <span class="bahan">gula</span> dan <span class="bahan">garam</span>.
+    </p>
+    <p>Oleh karena itu, span juga merupakan div/container yang beda fungsinya lebih berfokus pada ranah sempit alias berkarakter inline dalam sebuah paragraph, list, heading, dll</p>
+</body>
+</html>

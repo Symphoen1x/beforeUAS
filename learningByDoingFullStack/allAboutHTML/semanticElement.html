@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML 5</title>
+</head>
+<body>
+    <!-- Klik F12 + select manual/fokus ke code -> untuk melihat section lebih jelas-->
+     <h1>
+        Semantic -> Pemaknaan
+     </h1>
+     <p>
+        Makna kotekstual dari semantic HTML ini adalah mengkomunikasikan pemaknaan layout/organisasi suatu konten web melalui elemen-elemen penyusunya dari sisi struktural, sisi fungsional, dan sisi relationship. <br>
+        Sehingga bisa dikelompokan dengan lebih jelas dan bermakna antar elemen-elemenya. <br>
+        Tentu ini turut berperan inklusif dalam ARIA (Accessible Rich Internet Applications) sehingga screen reader bisa mengenali peran dan batasan tiap bagian. <br>
+        lebih dari itu, dengan menggunakan semantic elemen, SEO pencarian seperti google jadi lebih jelas dan mudah memhami web kita
+     </p>
+    <header>
+        <nav>
+            <a href="/learningByDoingFullStack/part2.html">
+                bagian header -> nav
+            </a>
+            </section>
+                <a href="#">
+                    Previous
+                </a>
+                <a href="#">
+                    Next
+                </a>
+            <section>
+               
+        </nav>        
+    </header>
+    <main>
+            <article>
+                <h2>
+                    Ini Tentang Penggunaan Elemen Article
+                </h2>
+                <p>Ini bagian dari outer nested elemen article, tapi tanpa css</p>
+                <article>
+                    <h2>
+                        Entah kenapa elemen article juga ga bisa h1, dan cocok H2-H6
+                    </h2>
+
+                    <p>Ini bagian dari inner nested elemen article, tapi tanpa css</p>
+                </article>
+                <img src="/learningByDoingFullStack/image.png" alt="xxx">
+                <q><br>
+                    Catatan: Elemen artikel dapat berada pada elemen artikel lainnya (nested) selama artikel tersebut berkaitan dengan induk elemen artikel yang menampungnya.<br>
+                    Misal, dalam sebuah tulisan yang dibungkus dalam artikel, dia menginsert metadata(tanggal/penulis), maka gunakan artikel inner didalamnya. Yang dibantu oleh footer/dll.<br>
+                    cek website yang pakai ini + kasih contohnya di <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/article">sini!</a>
+                </q>
+            </article>
+            <article>
+                <section>
+                    <h1>
+                         Section juga rusak kalau pakai h1 jadi pakai diluar dia!
+                    </h1>
+                    <h2>Ini Contoh Penggunaan Section</h2>
+                    <p>Elemen ini bersifat semantik, tapi umum. Jadi,gunakan jika tidak ada konten spesifik yang harus di bungkus oleh elemen semantic spesifik seperti nav pada header, aside dan article pada body, dll. <br>
+                        Biasanya digunakan di dalam elemen semantic yang spesifik <br>
+                        Elemen ini biasa digunakan untuk mengelompokan kesamaan struktur konten. <br>
+                         Artinya, setiap section harus diawali dengan judul (h2- h6) yang urut dan dilanjutkan dengan elemen lain sesuai kebutuhan. <br>
+                         Info lebih lanjut tentang ini bisa cek di: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/section">
+                            Daging nih!
+                         </a>
+                </section>
+                <section>
+                    <h2>
+                        Judul 1
+                    </h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident hic nulla, ad culpa distinctio cum, voluptas ex ullam est nesciunt tempore in, ipsam debitis sit. Aperiam suscipit sed ea et.
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        Judul 2
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, facere? Aut ex accusantium pariatur quidem quis perferendis totam illo ut officiis quisquam unde dicta error ipsa laboriosam, alias iste natus.
+                    </p>
+                </section>
+                <Section>
+                    <h2>
+                        Judul 3
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eius adipisci dolor et saepe officia deserunt, earum magnam expedita quibusdam voluptas. Voluptate similique a blanditiis consequatur, id voluptatibus tempore possimus?
+                    </p>
+                </Section>
+                <section>
+                    <button>
+                        Repply
+                    </button>
+                    <button>
+                        Like
+                    </button>
+                    <button>
+                        Forward
+                    </button>
+                    <button>
+                        Delete
+                    </button>
+                </section>
+            </article>
+            <article>
+                <aside>
+                    <h2>Ini Tentang Penggunaan Aside </h2>
+                    <h1> gw menemukan kalau dalam aside pakai h1, dia jadi rusak nih </h1>
+                    <p>Aside di dalam artikel</p>
+                    <q>Aside dengan tujuan ini menunjukan kalau elemen ini berisi info yang berhubungan dengan bagian artikel tersebut,tapi bukan bagian dari konten artikel itu sendiri<br>
+                        Biasanya digugnakan untuk catatan kaki, trivia, kutipan, dll yang intinya untuk memperkaya pemahaman pembaca tanpa mengganggu konten utama <br>
+                        Tapi, bukan  untuk membungkus text dalam tanda kurung  kayak sebuah arti/klarifikasi/dll.<br>
+                        contoh asli yang ini itu kayak: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside">contoh kedua</a>
+                    </q>
+                </aside>
+            </article>
+        <aside>
+            <p>Aside diluar artikel</p>
+            <q>Ketika ditempatkan di luar elemen article, elemen ini dapat berisi informasi yang relevan pada keseluruhan halaman/web tersebut biasanya sebagai sidebar/call-outt-box meskipun tujuan utamanya adalah memperkaya informasi juga <br>
+
+                contoh asli yang ini itu kayak: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside">Contoh pertama</a>
+            </q>
+        </aside>
+    </main>
+    <footer>
+        <p>Copyright 2019 <cite><a href="/learningByDoingFullStack/part2.html">@Almadani</a></cite></p>
+    </footer>
+    
+</body>
+</html>

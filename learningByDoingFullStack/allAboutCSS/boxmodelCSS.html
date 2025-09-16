@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Box Model CSS</title>
+    <style>
+        .widthPx{
+            width: 800px;
+            height: 400px;
+            background-color: blue;
+        }
+        .maxWidthPx{
+        max-width: 800px;
+        height: 400px;
+        /* margin-left: auto;
+        margin-right: auto; */
+        background-color: deeppink;
+        }
+        .minWidthPx{
+            min-width: 500px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+        .contentBox{
+            box-sizing: content-box;
+            height: 200px;
+            width: 200px;
+            background-color: lightgreen;
+            border: 10px solid cornflowerblue;
+            padding: 20px;
+        }
+        .borderBox{
+            box-sizing: border-box;
+            height: 200px;
+            width: 200px;
+            background-color: lightgreen;
+            border: 10px solid cornflowerblue;
+            padding: 20px;
+        }
+        .padingVsMargin{
+            border: 4px solid red;
+            padding: 10px;
+            margin: 20px;
+        }
+        .versiInduk{
+            border: 5px solid blue;
+            width: 50%;            
+        }
+        .versiInduk.Anak{ /*Harus nempel dua class tersebut!*/
+            margin: 0 auto;
+        }
+        .versiClassIndukOnly{
+            border: 5px solid green;
+            margin: 0 auto;
+            width: 90%;
+        }
+        .boxShadowAndRoundedCorner{
+            width: 400px;
+            height: 400px;
+            background-color: greenyellow;
+            box-shadow: 4px 8px 2px 1px red;
+            border: 5px solid orange;
+            border-radius: 5px;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Limiting Dimension vs width</h1>
+    <div class="widthPx">
+        <h2>width</h2>
+        <p>
+            Fokuslah pada kontainer dan teks didalamnya. Pada kontainer dengan width saja,  dia kalau dilebar-kecilkan halamanya absolute/tetap mengikuti sifat pxnya jadi ga akan melebar dan menyempit. 
+            Sementara pada teks dengan width, dia juga mengikuti elemen induk/pembungkusnya yang absolute.<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam veniam id blanditiis magnam architecto commodi corrupti fugit quos, nemo porro magni tempora enim cupiditate, explicabo nisi beatae sunt, doloribus facere voluptate deleniti nesciunt molestias! Nulla repellat vero veritatis aliquam. Nobis consequatur itaque omnis et dicta provident possimus? Optio, maxime architecto.
+        </p>
+    </div>
+    <div class="maxWidthPx">
+        <h2>max-width</h2>
+        <p>
+            Fokuslah pada kontainer saja karena teks itu sifatnya jadi relatif/menyesuaikan ukuran induknya. 
+            Pada kontainer dengan max-width, jika dia ukuranya masih berada dibawah 800px dari segi width, maka dia akan melebar & menyempit berdasarkan ukuran page yang ada. <br>
+            Namun, jika lebih dari 800px width, dia akan tetap dengan ukuran 800px meskipun pagenya di renggangkan/disempitkan. <br>
+            Coba aja! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit consectetur possimus doloremque iusto ex error expedita praesentium nam neque est velit magni, eaque facere quasi vero voluptatem cum? Ut, deleniti!
+        </p>
+    </div>
+    
+    <div class="minWidthPx">
+        <h2>min-width</h2>
+        <p>
+            Fokuslah pada kontainer saja karena teks itu sifatnya jadi relatif/menyesuaikan ukuran induknya. <br>
+            Min itu bedanya adalah ketika page ukuran lebih dari min-widht, maka dia akan menyesuaikan halaman induknya yang jika dilebar/kecilkan dia akan melebar dan mengecil. 
+            Namun, jika ukuran kurang dari min-width, maka containernya akan fill seimbang terhadap ukuran pagenya/bisa dibilang tidak melebar/mengecil
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero esse placeat culpa sequi optio consectetur laboriosam animi debitis excepturi labore quae nobis magnam quia magni numquam expedita minima id doloremque sit repudiandae, nostrum qui dicta. Amet iure quae consequatur? Molestias quos rem, accusantium illo odit eius nesciunt dolores sit sequi.
+        </p>
+    </div>
+    <h1>Bos-Sizing: content-box vs border-box </h1>
+    <div class="contentBox">
+        <p>
+            Elemen menerapkan <code>box-sizing: content-box;</code> Ukuran box secara keseluruhan akan
+            menjadi 260px lebar, 260px tinggi; 260 = 200 + 20 + 20 + 10 + 10. <br>
+            Ini tentu menjadi masalah karena kita tidak tahu ukuran konten yang kita inginkan secara tetap tanpa tambahan padding, margin, dll!
+          </p>
+    </div>
+    <div class="borderBox">
+        <p>
+            Elemen menerapkan <code>box-sizing: border-box;</code> Ukuran box akan tetap 200px lebar,
+            200px tinggi meskipun menerapkan padding dan border. Ini solusinya!
+        </p>
+    </div>
+    <h1>Box model: Border</h1>
+    <p>Sedikit tips, untuk menentukan boder langsung pakai shorthandnya aja dengan syntax: <br>
+        selector(border: width type color) -> urutan tidak usah diperhatikan
+    </p>
+    <h1>padding vs margin</h1>
+    <div class="padingVsMargin">
+        <p>
+            padding = jarak elemen konten dengan border <br>
+            margin = jarak border dengan elemen lain atau dengan page web
+        </p>
+    </div>
+    <h1>Centering Content & display roles</h1>
+    <div class="versiInduk">
+        <p>versi elemen anak bergantung pada induk, ini induk<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur totam optio, accusantium molestias deleniti architecto placeat libero facere ea nobis porro velit eaque corporis, ab ut at atque quas soluta?</p>
+    </div>
+    <div class="versiInduk Anak">
+        <p>versi elemen anak bergantung pada induk, ini anak <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio veniam necessitatibus repellendus. Temporibus, expedita totam. Fuga dicta voluptatum modi!
+        </p>
+    </div>
+    <div class="versiClassIndukOnly">
+        <p>Versi elemen menjadi induknya sendiri <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo nulla, ullam, consequatur officia ea recusandae quia incidunt deserunt tenetur accusamus commodi eveniet beatae. Rerum, nulla. Autem provident est vero voluptas!
+        </p>
+    </div>
+    <h1>Box Shadow & Rounded corner</h1>
+    <div class="boxShadowAndRoundedCorner">
+        <p>
+            Value yang ada dalam box-shadow: <br>
+            <li>Nilai pertama: menunjukkan seberapa jauh ke kiri atau kanan (horizontal) bayangan harus ditampakkan.  
+            </li>
+            <li>
+                Nilai kedua: menunjukkan jarak ke atas atau ke bawah (vertical) bayangan harus ditampakkan. 
+            </li>
+            <li>
+                Nilai ketiga (opsional): menentukan tingkat keburaman yang harus diterapkan pada bayangan. 
+            </li>
+            <li>
+                Nilai keempat (opsional): tingkat sebaran (spread) bayangan. Semakin besar nilai yang ditentukan, bayangan yang tampak akan semakin luas. 
+            </li>
+            <li>
+                Nilai kelima: menentukan warna yang digunakan pada bayangan.
+            </li>
+        </p>
+    </div>
+</body>
+</html>
